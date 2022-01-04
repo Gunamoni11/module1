@@ -3,10 +3,12 @@ variable "profile_name" {
 }
 
 variable "region_name" {
+    type = "string"
     default = "us-east-2"
 }
 
 variable "key_name_name" {
+    type = "string"
     default = "jenkins_key"
 }
 
@@ -28,6 +30,7 @@ variable "public_key_name" {
 }
 
 variable "iam_instance_profile_name" {
+    type = "string"
     default = "ec2_full_acess"
 }
 
