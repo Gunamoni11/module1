@@ -1,4 +1,6 @@
-
+provider "aws" {
+    region = "us-east-2"
+}
 data "aws_instance" "myec2details" {
     instance_id = var.instance_id_name
 }
@@ -8,7 +10,6 @@ resource "aws_key_pair" "jenkins_key" {
 }
 resource "aws_instance" "myec2" {
     ami = "data.aws_instance.myec2details.ami"
-    region_name = "us-east-2"
     key_name = aws_key_pair.jenkins_key.id
 instance_type = var.instance_type_name
 iam_instance_profile = var.iam_instance_profile_name
