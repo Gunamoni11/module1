@@ -1,6 +1,6 @@
+
 data "aws_instance" "myec2details" {
     instance_id = var.instance_id_name
-
 
 resource "aws_key_pair" "jenkins_key" {
     key_name = var.key_name_name
