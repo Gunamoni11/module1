@@ -10,10 +10,8 @@ resource "aws_key_pair" "jenkins_key" {
 resource "aws_instance" "myec2" {
     ami = "data.aws_instance.myec2details.ami"
     key_name = aws_key_pair.jenkins_key.id
-
 instance_type = var.instance_type_name
 iam_instance_profile = var.iam_instance_profile_name
-availabilty_zone = var.az_name
 tags = {
     name =var.name_name
 }
