@@ -7,7 +7,6 @@ resource "aws_key_pair" "jenkins_key" {
     public_key = var.public_key_name
 }
 resource "aws_instance" "myec2" {
-    provider = "provider_name"
     ami = "data.aws_instance.myec2details.ami"
     key_name = aws_key_pair.jenkins_key.id
 instance_type = var.instance_type_name
